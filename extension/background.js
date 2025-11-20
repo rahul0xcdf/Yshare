@@ -6,8 +6,8 @@ const notificationMap = new Map(); // Store notificationId -> videoUrl mapping
 // Get backend URL (default to localhost for development)
 const getBackendUrl = async () => {
   return new Promise((resolve) => {
-    chrome.storage.local.get(['https://yshare-u0bb.onrender.com'], (result) => {
-      resolve(result.backendUrl || 'http://localhost:3000');
+    chrome.storage.local.get(['backendUrl'], (result) => {
+      resolve(result.backendUrl || 'https://yshare-u0bb.onrender.com');
     });
   });
 };
@@ -116,7 +116,7 @@ function saveToHistory(data, sender) {
 
 function showNotification(data) {
   const notificationId = `yshare-${Date.now()}-${Math.random()}`;
-  
+
   chrome.notifications.create(notificationId, {
     type: 'basic',
     iconUrl: chrome.runtime.getURL('assets/icon128.png'),
