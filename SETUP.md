@@ -44,10 +44,11 @@
 3. **Set Environment Variables in Render:**
    - `MONGODB_URI`: Your MongoDB Atlas connection string
    - `PORT`: (Render sets this automatically)
+   - **Important:** Go to MongoDB Atlas Network Access and whitelist `0.0.0.0/0` (Allow Access from Anywhere). Render uses dynamic IPs, so your local IP whitelist won't work.
 
 4. **Note your Render URL:**
    - It will be something like: `https://yshare-backend.onrender.com`
-
+https://yshare-u0bb.onrender.com
 ### Step 3: Extension Setup
 
 1. **Load Extension in Chrome:**

@@ -6,7 +6,7 @@ const notificationMap = new Map(); // Store notificationId -> videoUrl mapping
 // Get backend URL (default to localhost for development)
 const getBackendUrl = async () => {
   return new Promise((resolve) => {
-    chrome.storage.local.get(['backendUrl'], (result) => {
+    chrome.storage.local.get(['https://yshare-u0bb.onrender.com'], (result) => {
       resolve(result.backendUrl || 'http://localhost:3000');
     });
   });
